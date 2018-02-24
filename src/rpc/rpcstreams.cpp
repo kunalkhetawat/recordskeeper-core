@@ -2,8 +2,7 @@
 // Copyright (c) 2014-2016 The Bitcoin Core developers
 // Original code was distributed under the MIT software license.
 // Copyright (c) 2014-2017 Coin Sciences Ltd
-// Copyright (c) 2018 RecordsKeeper
-// Rk code distributed under the GPLv3 license, see COPYING file.
+// MultiChain code distributed under the GPLv3 license, see COPYING file.
 
 
 #include "rpc/rpcwallet.h"
@@ -29,7 +28,7 @@ void parseStreamIdentifier(Value stream_identifier,mc_EntityDetails *entity)
                 unsigned char *root_stream_name;
                 int root_stream_name_size;
                 root_stream_name=(unsigned char *)mc_gState->m_NetworkParams->GetParam("rootstreamname",&root_stream_name_size);        
-                if(mc_gState->m_NetworkParams->IsProtocolRk() == 0)
+                if(mc_gState->m_NetworkParams->IsProtocolMultichain() == 0)
                 {
                     root_stream_name_size=0;
                 }    
@@ -268,12 +267,12 @@ Value createstreamfromcmd(const Array& params, bool fHelp)
 
     CWalletTx wtx;
     
-    mc_Script *lpScript;
-    
-    mc_Script *lpDetailsScript;
-    lpDetailsScript=NULL;
-    
-    mc_Script *lpDetails;
+    mc_Script *lpScript=mc_gState->m_TmpBuffers->m_RpcScript3;   
+    lpScript->Clear();
+    mc_Script *lpDetailsScript=mc_gState->m_TmpBuffers->m_RpcScript1;    
+    lpDetailsScript->Clear();
+    mc_Script *lpDetails=mc_gState->m_TmpBuffers->m_RpcScript2;
+    lpDetails->Clear();
     
     int ret,type;
     string stream_name="";
@@ -320,9 +319,9 @@ Value createstreamfromcmd(const Array& params, bool fHelp)
         }        
     }
 
-    lpScript=new mc_Script;
+    lpScript->Clear();
     
-    lpDetails=new mc_Script;
+    lpDetails->Clear();
     lpDetails->AddElement();
     if(params[3].get_bool())
     {
@@ -357,8 +356,6 @@ Value createstreamfromcmd(const Array& params, bool fHelp)
     const unsigned char *script;
     script=lpDetails->GetData(0,&bytes);
     
-    lpDetailsScript=new mc_Script;
-
     size_t elem_size;
     const unsigned char *elem;
     CScript scriptOpReturn=CScript();
@@ -454,13 +451,6 @@ Value createstreamfromcmd(const Array& params, bool fHelp)
     
     SendMoneyToSeveralAddresses(addresses, 0, wtx, lpScript, scriptOpReturn,fromaddresses);
 
-    if(lpDetailsScript)
-    {
-        delete lpDetailsScript;
-    }
-    delete lpDetails;
-    delete lpScript;
-  
     return wtx.GetHash().GetHex();    
 }
 
@@ -508,12 +498,130 @@ Value createcmd(const Array& params, bool fHelp)
 
 Value publish(const Array& params, bool fHelp)
 {
-	 throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported for this version"); 
+    if (fHelp || params.size() != 3)
+        throw runtime_error("Help message not found\n");
+    
+    if(mc_gState->m_Features->Streams() == 0)
+    {
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported for this protocol version");        
+    }
+    
+    Array ext_params;
+    ext_params.push_back("*");
+    BOOST_FOREACH(const Value& value, params)
+    {
+        ext_params.push_back(value);
+    }
+    
+    return publishfrom(ext_params,fHelp);    
 }
 
 Value publishfrom(const Array& params, bool fHelp)
 {
-	throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported for this version"); 
+    if (fHelp || params.size() != 4)
+        throw runtime_error("Help message not found\n");
+
+    if(mc_gState->m_Features->Streams() == 0)
+    {
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported for this protocol version");        
+    }
+       
+    if(params[2].get_str() == "*")
+    {
+        throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid item-key-string: *");                
+    }
+    
+    mc_Script *lpScript=mc_gState->m_TmpBuffers->m_RpcScript3;
+    lpScript->Clear();
+    mc_EntityDetails stream_entity;
+    parseStreamIdentifier(params[1],&stream_entity);           
+               
+    
+    // Wallet comments
+    CWalletTx wtx;
+            
+    vector<CTxDestination> addresses;    
+    
+    vector<CTxDestination> fromaddresses;        
+    
+    if(params[0].get_str() != "*")
+    {
+        fromaddresses=ParseAddresses(params[0].get_str(),false,false);
+
+        if(fromaddresses.size() != 1)
+        {
+            throw JSONRPCError(RPC_INVALID_PARAMETER, "Single from-address should be specified");                        
+        }
+        if( (IsMine(*pwalletMain, fromaddresses[0]) & ISMINE_SPENDABLE) != ISMINE_SPENDABLE )
+        {
+            throw JSONRPCError(RPC_WALLET_ADDRESS_NOT_FOUND, "Private key for from-address is not found in this wallet");                        
+        }
+    }
+
+    FindAddressesWithPublishPermission(fromaddresses,&stream_entity);
+        
+    if(params[2].get_str().size() > MC_ENT_MAX_ITEM_KEY_SIZE)
+    {
+        throw JSONRPCError(RPC_INVALID_PARAMETER, "Item key is too long");                                                                                                    
+    }
+    
+    mc_Script *lpDetailsScript=mc_gState->m_TmpBuffers->m_RpcScript1;
+    lpDetailsScript->Clear();
+        
+
+    bool fIsHex;
+    vector<unsigned char> dataData(ParseHex(params[3].get_str().c_str(),fIsHex));    
+    if(!fIsHex)
+    {
+        throw JSONRPCError(RPC_INVALID_PARAMETER, "Item data should be hexadecimal string");                                                                                                    
+    }
+    
+    lpDetailsScript->Clear();
+    lpDetailsScript->SetEntity(stream_entity.GetTxID()+MC_AST_SHORT_TXID_OFFSET);
+    lpDetailsScript->SetItemKey((unsigned char*)params[2].get_str().c_str(),params[2].get_str().size());
+
+    lpDetailsScript->AddElement();
+    if(dataData.size())
+    {
+        lpDetailsScript->SetData(&dataData[0],dataData.size());
+    }
+
+    size_t elem_size;
+    const unsigned char *elem;
+    CScript scriptOpReturn=CScript();
+    
+    for(int e=0;e<lpDetailsScript->GetNumElements();e++)
+    {
+        elem = lpDetailsScript->GetData(e,&elem_size);
+        if(e == (lpDetailsScript->GetNumElements() - 1) )
+        {
+            if(elem_size > 0)
+            {
+                scriptOpReturn << OP_RETURN << vector<unsigned char>(elem, elem + elem_size);
+            }
+            else
+            {
+                scriptOpReturn << OP_RETURN;
+            }
+        }
+        else
+        {
+            if(elem_size > 0)
+            {
+                scriptOpReturn << vector<unsigned char>(elem, elem + elem_size) << OP_DROP;
+            }                
+        }
+    }    
+    
+    
+    lpScript->Clear();
+         
+    EnsureWalletIsUnlocked();
+    LOCK (pwalletMain->cs_wallet_send);
+    
+    SendMoneyToSeveralAddresses(addresses, 0, wtx, lpScript, scriptOpReturn,fromaddresses);
+
+    return wtx.GetHash().GetHex();    
 }
 
 Value subscribe(const Array& params, bool fHelp)
@@ -527,7 +635,7 @@ Value subscribe(const Array& params, bool fHelp)
     }
     if((mc_gState->m_WalletMode & MC_WMD_TXS) == 0)
     {
-        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. To get this functionality, run \"rkd -walletdbversion=2 -rescan\" ");        
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. To get this functionality, run \"multichaind -walletdbversion=2 -rescan\" ");        
     }   
        
     // Whether to perform rescan after import
@@ -616,7 +724,7 @@ Value unsubscribe(const Array& params, bool fHelp)
     }
     if((mc_gState->m_WalletMode & MC_WMD_TXS) == 0)
     {
-        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. To get this functionality, run \"rkd -walletdbversion=2 -rescan\" ");        
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. To get this functionality, run \"multichaind -walletdbversion=2 -rescan\" ");        
     }   
        
 
@@ -639,8 +747,7 @@ Value unsubscribe(const Array& params, bool fHelp)
         inputEntities.push_back(entity_to_subscribe);
     }
         
-    mc_Buffer *streams;
-    streams=new mc_Buffer;
+    mc_Buffer *streams=mc_gState->m_TmpBuffers->m_RpcBuffer1;
     streams->Initialize(sizeof(mc_TxEntity),sizeof(mc_TxEntity),MC_BUF_MODE_DEFAULT);
     
     
@@ -686,12 +793,10 @@ Value unsubscribe(const Array& params, bool fHelp)
     {
         if(pwalletTxsMain->Unsubscribe(streams))
         {
-            delete streams;
             throw JSONRPCError(RPC_INTERNAL_ERROR, "Couldn't unsubscribe from stream");                                    
         }
     }
 
-    delete streams;
     return Value::null;
 }
 
@@ -706,7 +811,7 @@ Value getstreamitem(const Array& params, bool fHelp)
     }
     if((mc_gState->m_WalletMode & MC_WMD_TXS) == 0)
     {
-        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"rkd -walletdbversion=2 -rescan\" ");        
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"multichaind -walletdbversion=2 -rescan\" ");        
     }   
            
     mc_EntityDetails stream_entity;
@@ -756,7 +861,7 @@ Value liststreamitems(const Array& params, bool fHelp)
     }
     if((mc_gState->m_WalletMode & MC_WMD_TXS) == 0)
     {
-        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"rkd -walletdbversion=2 -rescan\" ");        
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"multichaind -walletdbversion=2 -rescan\" ");        
     }   
            
     mc_TxEntityStat entStat;
@@ -803,9 +908,8 @@ Value liststreamitems(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_NOT_SUBSCRIBED, "Not subscribed to this stream");                                
     }
     
-    mc_Buffer *entity_rows;
-    entity_rows=new mc_Buffer;
-    entity_rows->Initialize(MC_TDB_ENTITY_KEY_SIZE,MC_TDB_ROW_SIZE,MC_BUF_MODE_DEFAULT);
+    mc_Buffer *entity_rows=mc_gState->m_TmpBuffers->m_RpcEntityRows;
+    entity_rows->Clear();
     
     mc_AdjustStartAndCount(&count,&start,entStat.m_LastPos);
     
@@ -825,8 +929,6 @@ Value liststreamitems(const Array& params, bool fHelp)
             retArray.push_back(entry);                                
         }
     }
-    
-    delete entity_rows;
     
     return retArray;
 }
@@ -867,7 +969,7 @@ Value liststreamblockitems(const Array& params, bool fHelp)
     }
     if((mc_gState->m_WalletMode & MC_WMD_TXS) == 0)
     {
-        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"rkd -walletdbversion=2 -rescan\" ");        
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"multichaind -walletdbversion=2 -rescan\" ");        
     }   
            
     mc_TxEntityStat entStat;
@@ -917,9 +1019,8 @@ Value liststreamblockitems(const Array& params, bool fHelp)
     height_from=heights[0];
     height_to=heights[0];
 
-    mc_Buffer *entity_rows;
-    entity_rows=new mc_Buffer;
-    entity_rows->Initialize(MC_TDB_ENTITY_KEY_SIZE,MC_TDB_ROW_SIZE,MC_BUF_MODE_DEFAULT);
+    mc_Buffer *entity_rows=mc_gState->m_TmpBuffers->m_RpcEntityRows;
+    entity_rows->Clear();
     
     for(unsigned int i=1;i<heights.size();i++)
     {
@@ -933,7 +1034,6 @@ Value liststreamblockitems(const Array& params, bool fHelp)
     
     
     getTxsForBlockRange(txids,&entStat.m_Entity,height_from,height_to,entity_rows);
-    delete entity_rows;
     
     mc_AdjustStartAndCount(&count,&start,txids.size());
     
@@ -1011,7 +1111,7 @@ Value liststreamkeyitems(const Array& params, bool fHelp)
     }
     if((mc_gState->m_WalletMode & MC_WMD_TXS) == 0)
     {
-        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"rkd -walletdbversion=2 -rescan\" ");        
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"multichaind -walletdbversion=2 -rescan\" ");        
     }   
     
     if(params[1].get_str() == "*")
@@ -1078,9 +1178,8 @@ Value liststreamkeyitems(const Array& params, bool fHelp)
     getSubKeyEntityFromKey(params[1].get_str(),entStat,&entity);
     
     
-    mc_Buffer *entity_rows;
-    entity_rows=new mc_Buffer;
-    entity_rows->Initialize(MC_TDB_ENTITY_KEY_SIZE,MC_TDB_ROW_SIZE,MC_BUF_MODE_DEFAULT);
+    mc_Buffer *entity_rows=mc_gState->m_TmpBuffers->m_RpcEntityRows;
+    entity_rows->Clear();
     
     mc_AdjustStartAndCount(&count,&start,pwalletTxsMain->GetListSize(&entity,entStat.m_Generation,NULL));
     
@@ -1101,8 +1200,6 @@ Value liststreamkeyitems(const Array& params, bool fHelp)
         }
     }
     
-    delete entity_rows;
-    
     return retArray;
 }
 
@@ -1118,7 +1215,7 @@ Value liststreampublisheritems(const Array& params, bool fHelp)
     }
     if((mc_gState->m_WalletMode & MC_WMD_TXS) == 0)
     {
-        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"rkd -walletdbversion=2 -rescan\" ");        
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"multichaind -walletdbversion=2 -rescan\" ");        
     }   
            
     if(params[1].get_str() == "*")
@@ -1185,9 +1282,8 @@ Value liststreampublisheritems(const Array& params, bool fHelp)
 
     getSubKeyEntityFromPublisher(params[1].get_str(),entStat,&entity);
     
-    mc_Buffer *entity_rows;
-    entity_rows=new mc_Buffer;
-    entity_rows->Initialize(MC_TDB_ENTITY_KEY_SIZE,MC_TDB_ROW_SIZE,MC_BUF_MODE_DEFAULT);
+    mc_Buffer *entity_rows=mc_gState->m_TmpBuffers->m_RpcEntityRows;
+    entity_rows->Clear();
     
     mc_AdjustStartAndCount(&count,&start,pwalletTxsMain->GetListSize(&entity,entStat.m_Generation,NULL));
     
@@ -1208,8 +1304,6 @@ Value liststreampublisheritems(const Array& params, bool fHelp)
         }
     }
     
-    delete entity_rows;
-    
     return retArray;
 }
 
@@ -1226,18 +1320,17 @@ Value liststreammap_operation(mc_TxEntity *parent_entity,vector<mc_TxEntity>& in
     mc_TxEntity entity;
     mc_TxEntityStat entStat;
     Array retArray;
-    mc_Buffer *entity_rows;
+    mc_Buffer *entity_rows=mc_gState->m_TmpBuffers->m_RpcEntityRows;
     mc_TxEntityRow erow;
     uint160 stream_subkey_hash;    
     int row,enitity_count;
     
-    entity_rows=NULL;
+    entity_rows->Clear();
     enitity_count=inputEntities.size();
     if(enitity_count == 0)
     {
         mc_AdjustStartAndCount(&count,&start,pwalletTxsMain->GetListSize(parent_entity,NULL));
-        entity_rows=new mc_Buffer;
-        entity_rows->Initialize(MC_TDB_ENTITY_KEY_SIZE,MC_TDB_ROW_SIZE,MC_BUF_MODE_DEFAULT);
+        entity_rows->Clear();
         pwalletTxsMain->GetList(parent_entity,start+1,count,entity_rows);
         enitity_count=entity_rows->GetCount();
     }
@@ -1258,7 +1351,7 @@ Value liststreammap_operation(mc_TxEntity *parent_entity,vector<mc_TxEntity>& in
     {
         mc_TxEntityRow *lpEntTx;
         string key_string;
-        if(entity_rows)
+        if(entity_rows->GetCount())
         {
             lpEntTx=(mc_TxEntityRow*)entity_rows->GetRow(i);
             key_string=pwalletTxsMain->GetSubKey(lpEntTx->m_TxId, NULL,NULL);
@@ -1328,11 +1421,6 @@ Value liststreammap_operation(mc_TxEntity *parent_entity,vector<mc_TxEntity>& in
         retArray.push_back(all_entry);                                
     }
 
-    if(entity_rows)
-    {
-        delete entity_rows;
-    }
-    
     return retArray;
 }
 
@@ -1452,7 +1540,7 @@ Value liststreamkeys(const Array& params, bool fHelp)
     }
     if((mc_gState->m_WalletMode & MC_WMD_TXS) == 0)
     {
-        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"rkd -walletdbversion=2 -rescan\" ");        
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"multichaind -walletdbversion=2 -rescan\" ");        
     }   
            
     return liststreamkeys_or_publishers(params,false);
@@ -1464,7 +1552,7 @@ Value liststreampublishers(const Array& params, bool fHelp)
         throw runtime_error("Help message not found\n");
     if((mc_gState->m_WalletMode & MC_WMD_TXS) == 0)
     {
-        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"rkd -walletdbversion=2 -rescan\" ");        
+        throw JSONRPCError(RPC_NOT_SUPPORTED, "API is not supported with this wallet version. For full streams functionality, run \"multichaind -walletdbversion=2 -rescan\" ");        
     }   
     
     if(mc_gState->m_Features->Streams() == 0)
