@@ -374,7 +374,7 @@ int mc_RkParams::Build(const unsigned char* pubkey, int pubkey_size)
     {
         return err;
     }*/
-        
+
     CalculateHash(hash);
     
     err=SetParam("chainparamshash",(const char*)hash,32);
