@@ -541,8 +541,7 @@ Value publishfrom(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid item-key-string: *");                
     }
     
-    mc_Script *lpScript=mc_gState->m_TmpBuffers->m_RpcScript3;
-    lpScript->Clear();
+    mc_Script *lpScript;
     mc_EntityDetails stream_entity;
     parseStreamIdentifier(params[1],&stream_entity);           
                
@@ -575,8 +574,8 @@ Value publishfrom(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Item key is too long");                                                                                                    
     }
     
-    mc_Script *lpDetailsScript=mc_gState->m_TmpBuffers->m_RpcScript1;
-    lpDetailsScript->Clear();
+    mc_Script *lpDetailsScript;
+    lpDetailsScript=NULL;
         
 
     bool fIsHex;
@@ -586,7 +585,7 @@ Value publishfrom(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Item data should be hexadecimal string");                                                                                                    
     }
     
-    lpDetailsScript->Clear();
+    lpDetailsScript=new mc_Script;
     lpDetailsScript->SetEntity(stream_entity.GetTxID()+MC_AST_SHORT_TXID_OFFSET);
     lpDetailsScript->SetItemKey((unsigned char*)params[2].get_str().c_str(),params[2].get_str().size());
 
@@ -624,14 +623,17 @@ Value publishfrom(const Array& params, bool fHelp)
     }    
     
     
-    lpScript->Clear();
+    lpScript=new mc_Script;
          
     EnsureWalletIsUnlocked();
     LOCK (pwalletMain->cs_wallet_send);
     
     SendMoneyToSeveralAddresses(addresses, 0, wtx, lpScript, scriptOpReturn,fromaddresses);
 
-    return wtx.GetHash().GetHex();    
+    delete lpDetailsScript;
+    delete lpScript;
+  
+    return wtx.GetHash().GetHex();   
 }
 
 Value subscribe(const Array& params, bool fHelp)
