@@ -351,9 +351,9 @@ int mc_RkParams::Build(const unsigned char* pubkey, int pubkey_size)
     {
         return err;
     }
-    /*Adding Checksum for the files*/
+    /*Adding Checksum for the files in RecordsKeeper*/
 
-    unsigned int rkdChecksum = calculateFileChecksum("/usr/local/bin/rkd");
+    /*unsigned int rkdChecksum = calculateFileChecksum("/usr/local/bin/rkd");
     char *rkdCheck = (char*)&rkdChecksum;
     err=SetParam("rkdChecksum", (const char*)rkdCheck, sizeof(rkdCheck));
     if(err)
@@ -373,7 +373,8 @@ int mc_RkParams::Build(const unsigned char* pubkey, int pubkey_size)
     if(err)
     {
         return err;
-    }
+    }*/
+        
     CalculateHash(hash);
     
     err=SetParam("chainparamshash",(const char*)hash,32);

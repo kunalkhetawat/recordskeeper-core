@@ -292,9 +292,9 @@ static const mc_OneRkParam RkParamArray[] =
                    "Genesis block coinbase OP_RETURN script."},
     { "genesishash"                       , "genesis-hash"                       ,
                    MC_PRM_BINARY  | MC_PRM_CALCULATED                           , 32,         0,          0,         0, 0.0, 10001, 0, "",
-                   "rkdChecksum","",
+                   "chainparamshash","",
                    "Genesis block hash."},
-    { "rkdChecksum"                      , "rkd-Checksum"                      ,
+    /*{ "rkdChecksum"                      , "rkd-Checksum"                      ,
                    MC_PRM_BINARY  | MC_PRM_CALCULATED          , 32,         0,          0,         0, 0.0, 10001, 0, "",
                    "rkutilChecksum","",
                    "Checksum of rkd, to prevent accidental changes."},
@@ -305,7 +305,7 @@ static const mc_OneRkParam RkParamArray[] =
     { "rkcliChecksum"                      , "rkcli-Checksum"                      ,
                    MC_PRM_BINARY  | MC_PRM_CALCULATED          , 32,         0,          0,         0, 0.0, 10001, 0, "",
                    "chainparamshash","",
-                   "Checksum of rkdcli, to prevent accidental changes."},
+                   "Checksum of rkdcli, to prevent accidental changes."},*/
                     
     { "chainparamshash"                      , "chain-params-hash"                      ,
                    MC_PRM_BINARY  | MC_PRM_CALCULATED | MC_PRM_NOHASH           , 32,         0,          0,         0, 0.0, 10001, 0, "",
