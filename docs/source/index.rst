@@ -1,7 +1,8 @@
 RecordsKeeper
 =============
 
-.. image:: Records-kepeer-Logo.png
+.. image:: _static/Records-kepeer-Logo.png
+   :align: center
 
 .. toctree::
    :maxdepth: 2
