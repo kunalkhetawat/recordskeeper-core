@@ -44,6 +44,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   install
    gettingstarted
    minningguide
    usecases
