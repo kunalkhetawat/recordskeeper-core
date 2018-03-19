@@ -1,8 +1,9 @@
 RecordsKeeper
-=============
-
+*************
+| 
 .. image:: _static/Records-kepeer-Logo.png
    :align: center
+| 
 
 Recordskeeper is an open source platform for private blockchains, which offers a rich set of features including extensive configurability, rapid deployment, permissions management, native assets and data streams. Although it is designed to enable private blockchains, Recordskeeper provides maximal compatibility with the bitcoin ecosystem, including the peer-to-peer protocol, transaction/block formats and Bitcoin Core APIs/runtime parameters.
 
@@ -35,12 +36,16 @@ If you still have questions, you can try searching or asking on the RecordsKeepe
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   Getting Started
+   Minning Guide
+   Use Cases
+   License
+   Contact Us
 
 
 
-Indices and tables
-==================
+Contents
+========
 
 * :ref:`genindex`
 * :ref:`modindex`
