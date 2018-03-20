@@ -48,7 +48,7 @@ Contents
    gettingstarted
    minningguide
    usecases
-   license
+   contributing
    contactus
 
 
