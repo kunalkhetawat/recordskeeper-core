@@ -49,6 +49,7 @@ Contents
    minningguide
    usecases
    contributing
+   faq
    contactus
 
 
