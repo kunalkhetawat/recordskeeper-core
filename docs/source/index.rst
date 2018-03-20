@@ -10,12 +10,12 @@ RecordsKeeper
 Recordskeeper is an open source platform for private blockchains, which offers a rich set of features including extensive configurability, rapid deployment, permissions management, native assets and data streams. Although it is designed to enable private blockchains, Recordskeeper provides maximal compatibility with the bitcoin ecosystem, including the peer-to-peer protocol, transaction/block formats and Bitcoin Core APIs/runtime parameters.
 
 .. note::
-   The best way to get familiar with RecordsKeeper is to try the `Demo <https://demo.recordskeeper.co/basic-demo/>`_ . The Demo allows you to create a new wallet and store data to the RecordsKeeper Blockchain. It also allows you to retrive the data and verify it.
+   The best way to get familiar with RecordsKeeper is to try the `Demo <https://demo.recordskeeper.co/>`_ . The Demo allows you to create a new wallet and store data in the RecordsKeeper Public Blockchain. It also allows you to retrive the data and verify it.
 
 Useful Links
 ------------
-- `RecordsKeeper <https://wallet.recordskeeper.co/>`_
-- `RecordsKeeper Demo <https://demo.recordskeeper.co/basic-demo/>`_
+- `RecordsKeeper <https://www.recordskeeper.co/>`_
+- `RecordsKeeper Demo <https://demo.recordskeeper.co/>`_
 - `RecordsKeeper Wallet <https://wallet.recordskeeper.co/>`_ 
 - `RecordsKeeper Stats <https://stats.recordskeeper.co/>`_
 - `Mainnet Explorer <https://explorer.recordskeeper.co/>`_
