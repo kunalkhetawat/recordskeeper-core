@@ -81,7 +81,7 @@ The minimum average size of transaction in RecordsKeeper is 250 bytes and the ma
 What are the use cases of RecordsKeeper?
 ########################################
 
-There are several use cases for RecordsKeeper ranging from KYC verifications, Supplychain, Manufacturing, Health Record Management, Academic Certifications, Employment Credentials, etc. You can view all the use cases at RecordsKeeper whitepaper: https://www.recordskeeper.co/wp-content/uploads/2016/11/rk_whitepaper.pdf
+There are several use cases for RecordsKeeper ranging from KYC verifications, Supplychain, Manufacturing, Health Record Management, Academic Certifications, Employment Credentials, etc. You can view all the use cases at `RecordsKeeper whitepaper <https://www.recordskeeper.co/wp-content/uploads/2016/11/rk_whitepaper.pdf>`_ . 
 
 Is data uploaded in RecordsKeeper encrypted by default?
 #######################################################
