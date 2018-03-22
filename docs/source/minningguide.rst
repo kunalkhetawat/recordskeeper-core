@@ -48,7 +48,7 @@ terminal:
 
 .. note::
     * if you get error then run the above commands using “sudo” for root privileges 
-    * Use exit ommand (to return to your regular user)
+    * Use exit command (to return to your regular user)
     * Linux users move directly to the connecting to Recordskeeper Blockchain section
 
   
@@ -111,5 +111,111 @@ And, if you want your connection to remain active as a background process then r
 
     rkd recordskeeper@35.172.1.247:7345 -daemon
 
+If the Operating system does not pop up the allow firewall connections for rkd like shown below:
 
+.. image:: _static/AllowFirewall.png
+   :align: center
+
+Then you have to manually allow connections through firewall by following the steps below:
+
+Go to:
+
+.. code-block:: bash   
+    Control Panel > System and Security > Windows Defender Firewall > Advanced Settings
+
+And add Outbound rules by following these steps:
+
+**Step 1:** First select the Rule type, as you have to create a rule for allowing the network port so select Port here and then press Next:
+
+.. image:: _static/Step1Outbound.png
+   :align: center
+
+**Step 2:** Specify the port address of the RecordsKeeper Blockchain to which you are allowing access, for Mainnet type 7345 in the textbox and then click on Next:
+
+.. image:: _static/Step2Outbound.png
+   :align: center
+
+**Step 3:** Now click on *Allow the connection* and then press Next:
+
+.. image:: _static/Step3Outbound.png
+   :align: center
+
+**Step 4:** Select all three profiles here for the rule to apply, and then click on Next:
+
+.. image:: _static/Step4Outbound.png
+   :align: center
+
+**Step 5:** Now choose a name for the created Outbound rule and then press *Finish* to complete the process of opening up the ports.
+
+.. image:: _static/Step5Outbound.png
+   :align: center
+
+.. note::
+    If you want some other RecordsKeeper node to connect to your node then you have to allow connections by making Inbound rules for the same. Follow the same procedure after selecting a new Inbound rule.
+
+.. note::
+    Windows users now go to the Mining access permissions section.
+
+Mining Permissions
+------------------
+
+Linux:
+######
+
+You will see the folowing message on your Linux command line terminal after you execute the command to connect to the Recordskeeper blockchain.
+
+.. image:: _static/LinuxRKD.jpg
+   :align: center
+
+Windows:
+########
+
+You will see the following message on your Windows command line terminal after you execute the command to connect to the Recordskeeper blockchain.
+
+.. image:: _static/WindowsRKD.png
+   :align: center
+
+After this when your node gets connected, you will receive the permissions to connect, send and receive. Now look for your default XRK address from the command given below, which will display your node’s wallet address. This address is your “default XRK address” or “public address” of the Recordskeeper Blockchain in which you will receive XRK coins. To check the address, run the following command:
+
+.. code-block:: bash
+
+    rk-cli recordskeeper getaddresses
+
+Copy this address and send it to us `here <https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform>`_ to recieve Mining Permissions for RecordsKeeper Mainnet.
+
+After RecordsKeeper team grant mining permissions to your node address, only after that you would be able to mine XRK coins into your default address.
+
+To retireve private key for your node address run this command:
+
+.. code-block:: bash
+
+    rk-cli recordskeeper dumpprivkey {default_XRK_address}        (input node_address without braces)
+
+.. note::
+    Please store this private key safely, losing this will result in loss of XRK coins.
+
+
+After completing the above process, you can check for your node’s information (best block and synced block) by running following commands:
+
+.. code-block:: bash
+
+    rk-cli recordskeeper getinfo                 (for synced block)
+    rk-cli recordskeeper getblockchaininfo       (for best block)
+
+Your node will sync up to the best block, and then only your node can start mining and your balance will get updated with the mined XRK coins.
+
+In case you have entered the wrong ip-address then it will report this error:
+
+.. warning::
+
+    Error: Couldn't initialize permission database for blockchain recordskeeper. Probably rkd for this blockchain is already running. Exiting...
+
+Please check ip-address and port properly to connect to the RecordsKeeper Blockchain.
+
+.. note::
+
+    If you have already created a wallet address and you want to add it as your miner address then run this command from the command line terminal:
+    
+    .. code-block:: bash
+        rk-cli recordskeeper importprivkey {private_key}      (include private key without braces)
 
