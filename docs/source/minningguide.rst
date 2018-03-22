@@ -51,7 +51,7 @@ Moving the RecordsKeeper files to bin directory make them easily accessible from
 .. note::
     * if you get error then run the above commands using “sudo” for root privileges 
     * Use exit command (to return to your regular user)
-    * Linux users move directly to the connecting to Recordskeeper Blockchain section
+    * Linux users move directly to the :ref:`connecting-rk` section
 
   
 Windows :
@@ -68,8 +68,9 @@ Then open your command line terminal and go to that location, after that run the
     cd recordskeeper-windows-1.0.0
 
 .. note::
-    Windows users move directly to the connecting to Recordskeeper Blockchain section.
+    Windows users move directly to the :ref:`connecting-rk` section.
 
+.. _connecting-rk:
 
 Connecting to RecordsKeeper Blockchain
 --------------------------------------
@@ -111,7 +112,7 @@ And, if you want your connection to remain active as a background process then r
     rkd recordskeeper@35.172.1.247:7345 -daemon
 
 .. note::
-    Linux users now go to the Mining Permissions section
+    Linux users now go to the :ref:`mining-permissions` section
 
 Windows
 #######
