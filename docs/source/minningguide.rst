@@ -115,12 +115,14 @@ If the Operating system does not pop up the allow firewall connections for rkd l
 
 .. image:: _static/AllowFirewall.png
    :align: center
+   :width: 693.433px
 
 Then you have to manually allow connections through firewall by following the steps below:
 
 Go to:
 
-.. code-block:: bash   
+.. code-block:: bash
+  
     Control Panel > System and Security > Windows Defender Firewall > Advanced Settings
 
 And add Outbound rules by following these steps:
@@ -166,6 +168,7 @@ You will see the folowing message on your Linux command line terminal after you 
 
 .. image:: _static/LinuxRKD.jpg
    :align: center
+   :width: 693.433px
 
 Windows:
 ########
