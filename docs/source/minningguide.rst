@@ -71,13 +71,23 @@ Then open your command line terminal and go to that location, after that run the
     Windows users move directly to the connecting to Recordskeeper Blockchain section.
 
 
-Connecting to RecordsKeeper Blockchain(main net)
-------------------------------------------------
+Connecting to RecordsKeeper Blockchain
+--------------------------------------
+
+The RecordsKeeper Testnet Blockchain is avaialble for the users to Develop and Deploy applications over RecordsKeeper Blockchain, XRK Testnet tokens do not hold any value and are only avaialble for testing. You can earn XRK tokens from RecordsKeeper Mainnet mining.
 
 Linux:
 ######
 
-Now to connect to this Blockchain, run following command from the terminal:
+Now to connect to the RecordsKeeper Blockchain, run following command from the terminal:
+
+**RecordsKeeper Testnet**
+
+.. code-block:: bash
+
+    rkd recordskeeper-test@35.170.155.89:8379
+
+**RecordsKeeper Mainnet**
 
 .. code-block:: bash
 
@@ -87,6 +97,14 @@ Now to connect to this Blockchain, run following command from the terminal:
 This command will initialize your node.
 
 And, if you want your connection to remain active as a background process then run this command:
+
+**RecordsKeeper Testnet**
+
+.. code-block:: bash
+
+    rkd recordskeeper@35.172.1.247:7345 -daemon
+
+**RecordsKeeper Mainnet**
 
 .. code-block:: bash
 
@@ -98,7 +116,15 @@ And, if you want your connection to remain active as a background process then r
 Windows
 #######
 
-Now to connect to this Blockchain first go into the directory where you have downloaded “recordskeeper-windows-1.0.0” and then open command line terminal from that location:
+Now to connect to the RecordsKeeper Blockchain, first go into the directory where you have downloaded “recordskeeper-windows-1.0.0.zip” and then open command line terminal from that location:
+
+**RecordsKeeper Testnet**
+
+.. code-block:: bash
+
+    rkd recordskeeper-test@35.170.155.89:8379 
+
+**RecordsKeeper Mainnet**
 
 .. code-block:: bash
 
@@ -108,6 +134,14 @@ Now to connect to this Blockchain first go into the directory where you have dow
 This command will initialize your node.
 
 And, if you want your connection to remain active as a background process then run this command:
+
+**RecordsKeeper Testnet**
+
+.. code-block:: bash
+
+    rkd recordskeeper-test@35.170.155.89:8379 -daemon
+
+**RecordsKeeper Mainnet**
 
 .. code-block:: bash
 
@@ -134,7 +168,7 @@ And add Outbound rules by following these steps:
 .. image:: _static/Step1Outbound.png
    :align: center
 
-**Step 2:** Specify the port address of the RecordsKeeper Blockchain to which you are allowing access, for Mainnet type 7345 in the textbox and then click on Next:
+**Step 2:** Specify the port address of the RecordsKeeper Blockchain to which you are allowing access, for Testnet type 8379 and to open ports for Mainnet type 7345 in the textbox and then click on Next:
 
 .. image:: _static/Step2Outbound.png
    :align: center
@@ -163,8 +197,8 @@ And add Outbound rules by following these steps:
 Mining Permissions
 ------------------
 
-Linux:
-######
+RecordsKeeper Linux:
+####################
 
 You will see the folowing message on your Linux command line terminal after you execute the command to connect to the Recordskeeper blockchain.
 
@@ -172,15 +206,24 @@ You will see the folowing message on your Linux command line terminal after you 
    :align: center
    :width: 693.433px
 
-Windows:
-########
+RecordsKeeper Windows:
+######################
 
 You will see the following message on your Windows command line terminal after you execute the command to connect to the Recordskeeper blockchain.
 
 .. image:: _static/WindowsRKD.png
    :align: center
 
-After this when your node gets connected, you will receive the permissions to connect, send and receive. Now look for your default XRK address from the command given below, which will display your node’s wallet address. This address is your “default XRK address” or “public address” of the Recordskeeper Blockchain in which you will receive XRK coins. To check the address, run the following command:
+RecordsKeeper Permissions
+#########################
+
+**RecordsKeeper Testnet**
+
+The mining for RecordsKeeper Testnet is open for everyone so when you connect to RecordsKeeper Testnet, you will receive all the permissions for your default address
+
+**RecordsKeeper Mainnet**
+
+For Mainnet when your node gets connected, you will receive the permissions to connect, send and receive. Now look for your default XRK address from the command given below, which will display your node’s wallet address. This address is your “default XRK address” or “public address” of the Recordskeeper Blockchain in which you will receive XRK coins. To check the address, run the following command:
 
 .. code-block:: bash
 
