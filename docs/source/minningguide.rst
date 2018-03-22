@@ -44,7 +44,9 @@ terminal:
 
     tar -xvzf recordskeeper-1.0.0.tar.gz
     cd recordskeeper-1.0.0
-    mv rkd rk-cli rk-util /usr/local/bin (to make it easily accessible from the command line)
+    mv rkd rk-cli rk-util /usr/local/bin 
+
+Moving the RecordsKeeper files to bin directory make them easily accessible from the command line anywhere.
 
 .. note::
     * if you get error then run the above commands using “sudo” for root privileges 
@@ -122,7 +124,7 @@ Then you have to manually allow connections through firewall by following the st
 Go to:
 
 .. code-block:: bash
-  
+
     Control Panel > System and Security > Windows Defender Firewall > Advanced Settings
 
 And add Outbound rules by following these steps:
@@ -188,11 +190,11 @@ Copy this address and send it to us `here <https://docs.google.com/forms/d/e/1FA
 
 After RecordsKeeper team grant mining permissions to your node address, only after that you would be able to mine XRK coins into your default address.
 
-To retireve private key for your node address run this command:
+To retrieve private key for your node address run this command:
 
 .. code-block:: bash
 
-    rk-cli recordskeeper dumpprivkey {default_XRK_address}        (input node_address without braces)
+    rk-cli recordskeeper dumpprivkey {default_XRK_address}        #(input node_address without braces)
 
 .. note::
     Please store this private key safely, losing this will result in loss of XRK coins.
@@ -202,8 +204,8 @@ After completing the above process, you can check for your node’s information 
 
 .. code-block:: bash
 
-    rk-cli recordskeeper getinfo                 (for synced block)
-    rk-cli recordskeeper getblockchaininfo       (for best block)
+    rk-cli recordskeeper getinfo                 #(for synced block)
+    rk-cli recordskeeper getblockchaininfo       #(for best block)
 
 Your node will sync up to the best block, and then only your node can start mining and your balance will get updated with the mined XRK coins.
 
@@ -220,5 +222,6 @@ Please check ip-address and port properly to connect to the RecordsKeeper Blockc
     If you have already created a wallet address and you want to add it as your miner address then run this command from the command line terminal:
     
     .. code-block:: bash
-        rk-cli recordskeeper importprivkey {private_key}      (include private key without braces)
+
+        rk-cli recordskeeper importprivkey {private_key}      #(include private key without braces)
 
