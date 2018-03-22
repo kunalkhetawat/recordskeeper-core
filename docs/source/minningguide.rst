@@ -102,7 +102,7 @@ And, if you want your connection to remain active as a background process then r
 
 .. code-block:: bash
 
-    rkd recordskeeper@35.172.1.247:7345 -daemon
+    rkd recordskeeper-test@35.172.1.247:8379 -daemon
 
 **RecordsKeeper Mainnet**
 
@@ -111,7 +111,7 @@ And, if you want your connection to remain active as a background process then r
     rkd recordskeeper@35.172.1.247:7345 -daemon
 
 .. note::
-    Linux users now go to the Mining access permissions section
+    Linux users now go to the Mining Permissions section
 
 Windows
 #######
@@ -192,13 +192,15 @@ And add Outbound rules by following these steps:
     If you want some other RecordsKeeper node to connect to your node then you have to allow connections by making Inbound rules for the same. Follow the same procedure after selecting a new Inbound rule.
 
 .. note::
-    Windows users now go to the Mining access permissions section.
+    Windows users now can go to the :ref:`mining-permissions` section.
+
+.. _mining-permissions:
 
 Mining Permissions
 ------------------
 
-RecordsKeeper Linux:
-####################
+RecordsKeeper on Linux
+######################
 
 You will see the folowing message on your Linux command line terminal after you execute the command to connect to the Recordskeeper blockchain.
 
@@ -206,8 +208,8 @@ You will see the folowing message on your Linux command line terminal after you 
    :align: center
    :width: 693.433px
 
-RecordsKeeper Windows:
-######################
+RecordsKeeper on Windows
+########################
 
 You will see the following message on your Windows command line terminal after you execute the command to connect to the Recordskeeper blockchain.
 
