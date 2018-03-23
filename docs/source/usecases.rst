@@ -9,7 +9,7 @@ INSURANCE RECORD KEEPING
 
 **Using RecordsKeeper Blockchain to store insurance records:**
 
-		.. image:: _images/Insurance-Policy-&-Purchase-Claim.png
+		.. image:: _static/Insurance-Policy-&-Purchase-Claim.png
 		   :align: center
 		   :width: 693.433px
 
@@ -36,7 +36,7 @@ CORPORATE COMPLIANCES
 
 		One of the most tempting features of Blockchain from the compliance perspective is its practical immutability. As soon as data is saved onto the chain, it cannot be modified or removed. This is one of the major feature making Blockchain used as the document or proof for the transfer of any digital asset.
 
-		.. image:: _images/Compliance.png
+		.. image:: _static/Compliance.png
    			:align: center
    			:width: 693.433px
 
@@ -50,7 +50,7 @@ VERIFY ACADEMIC CERTIFICATIONS
 
 **Verify Academic Certifications**
 
-		.. image:: _images/Verify-Academic-Certificates.png
+		.. image:: _static/Verify-Academic-Certificates.png
 		   :align: center
 		   :width: 693.433px
 
@@ -71,7 +71,7 @@ SUPPLY CHAIN MANAGEMENT
 
 **Supply Chain Management**
 
-		.. image:: _images/Supply-Chain-Management.png
+		.. image:: _static/Supply-Chain-Management.png
 		   :align: center
 		   :width: 693.433px
 
@@ -92,7 +92,7 @@ TRUSTLESS FILE SHARING
 
 **Trustless File Sharing**
 
-		.. image:: _images/Trustless-File-Sharing.png
+		.. image:: _static/Trustless-File-Sharing.png
 		   :align: center
 		   :width: 693.433px
 
@@ -108,7 +108,7 @@ GOVERNMENT REGULATIONS
 
 **Government Regulations**
 
-		.. image:: _images/Government-Licences--ID-Verification.png
+		.. image:: _static/Government-Licences--ID-Verification.png
 		   :align: center
 		   :width: 693.433px
 
@@ -125,7 +125,7 @@ LAND OWNERSHIP RECORD KEEPING
 
 **Land Ownership Record Keeping**
 
-		.. image:: _images/Land.png
+		.. image:: _static/Land.png
 		   :align: center
 		   :width: 693.433px
 
@@ -144,7 +144,7 @@ EMPLOYEE VERIFICATION
 
 **Employee Verification**
 
-		.. image:: _images/Employee-Verification.png
+		.. image:: _static/Employee-Verification.png
 		   :align: center
 		   :width: 693.433px
 
@@ -160,7 +160,7 @@ HEALTH RECORD MANIFEST IN JUDICIARY
 
 **Health Record Manifest in Judiciary**
 
-		.. image:: _images/Medical-Records-Management.png
+		.. image:: _static/Medical-Records-Management.png
 		   :align: center
 		   :width: 693.433px
 
@@ -176,7 +176,7 @@ HEALTH RECORD MANIFEST IN JUDICIARY
 
 .. **Enterprise KYC**
 
-.. 		.. image:: _images/Employee-Verification.png
+.. 		.. image:: _static/Employee-Verification.png
 .. 		   :align: center
 .. 		   :width: 693.433px
 
