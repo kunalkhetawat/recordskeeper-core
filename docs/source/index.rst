@@ -47,6 +47,7 @@ Contents
    install
    gettingstarted
    minningguide
+   postman
    usecases
    contributing
    faq

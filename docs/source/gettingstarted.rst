@@ -2,7 +2,7 @@
 Getting Started
 ===============
 
-This tutorial requires you to setup a RecordsKeeper. If you have not done so already, please download and install RecordsKeeper on a server. If you are using MultiChain on Windows, please read the Installation on Windows notes on the previous page to adapt the instructions below.
+This tutorial requires you to setup a RecordsKeeper. If you have not done so already, please download and install RecordsKeeper on a server. If you are using Recordskeeper on Windows, please read the Installation on Windows notes on the previous page to adapt the instructions below.
 
 Download the latest `RecordsKeeper <https://demo.recordskeeper.co/basic-demo/>`_ build and put the downloded files under the root folder. You can also run these commands from the folder where the files are present.
 
