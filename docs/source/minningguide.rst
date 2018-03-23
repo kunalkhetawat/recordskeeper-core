@@ -271,3 +271,24 @@ Please check ip-address and port properly to connect to the RecordsKeeper Blockc
 
         rk-cli recordskeeper importprivkey {private_key}      #(include private key without braces)
 
+Stopping Blockchain
+-------------------
+
+**RecordsKeeper Mainnet**
+
+    In case you want to stop your running Recordskeeper node then you can use the following command from your command line terminal:
+
+
+    .. code-block:: bash
+
+        rkd recordskeeper stop
+
+
+**RecordsKeeper Testnet**
+
+    In case you want to stop your running Recordskeeper-test Blockchain node then you can use the following command from your command line terminal:
+
+
+    .. code-block:: bash
+
+        rkd recordskeeper-test stop
