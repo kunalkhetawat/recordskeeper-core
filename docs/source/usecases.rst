@@ -4,16 +4,16 @@ Use Cases
 
 The following use-cases are provided for business and individual needs:
 
-:ref:`enterprise-kyc`
-:ref:`insurance-records`
-:ref:`corporate-compliances`
-:ref:`academic-certifications`
-:ref:`supply-chain`
-:ref:`file-sharing`
-:ref:`gov-regulations`
-:ref:`land-ownership`
-:ref:`employee-verification`
-:ref:`health-records`
+* :ref:`enterprise-kyc`
+* :ref:`insurance-records`
+* :ref:`corporate-compliances`
+* :ref:`academic-certifications`
+* :ref:`supply-chain`
+* :ref:`file-sharing`
+* :ref:`gov-regulations`
+* :ref:`land-ownership`
+* :ref:`employee-verification`
+* :ref:`health-records`
 
 .. _enterprise-kyc:
 
@@ -129,7 +129,7 @@ Data sharing has always been prone to attacks, hackers are always present in a s
 
 The primary benefit of using RecordsKeeper blockchain for File sharing is the safety of the data. Information present on RecordsKeeper blockchain is immutable and unalterable which makes it safe and secure. In case of the RecorsKeeper blockchain, if a user uploaded the file then the hash of the file gets stored in the blockchain and then the user can verify the authenticity of the file by using the hash and claim the ownership.
 
-.. gov-regulations:
+.. _gov-regulations:
 
 Government Regulations
 ----------------------
@@ -144,7 +144,7 @@ Identification documents or licenses verification is a tedious but mandatory job
 
 This information is safe with Recordskeeper as the digest of the document is saved in the Ledger which when altered, gets completely changed making the verification process effortless. Recordskeeper platform aims to significantly reduce the time and resources spent on cross verification of the identification documents. Once the data gets stored in the RecordsKeeper blockchain by the document hash user can claim ownership on the file. By this mechanism, the chances of generating the fake documents get reduced. So, with the help of RecordsKeeper we can increase the authenticity of government identification documents.
 
-.. land-ownership:
+.. _land-ownership:
 
 Land Ownership Record Keeping
 -----------------------------
@@ -161,7 +161,7 @@ Currently, people have to rely on a trusted third party. E.g., a government agen
 
 The current process for clearing a land deed is very complex and requires house buyers to hire a middleman to clear the land deed for them. This is a complete waste of resources, both human and monetary, to accomplish something that can easily be done with the help of a public blockchain i.e. RecordsKeeper. In addition to making the process a whole lot more efficient, registering land deeds on a public blockchain also ensures that owner information cannot be manipulated in any way, adding another layer of security for the homeowners.
 
-.. employee-verification:
+.. _employee-verification:
 
 Employee Verification
 ---------------------
@@ -176,7 +176,7 @@ Employers face a major hurdle in hiring employees when they require verifying ca
 
 RecordsKeeper helps employers in identifying the employee, with details like the source of funds, business interests, and the employer history. They also monitor the progress along the way. Every employer has to perform the KYC process individually and upload the validated information and documents to the RecordsKeeper that stores digitized data tagged to a unique identification number for each customer. By using this reference number, the employer can access the stored data to perform due diligence whenever employee apply for a new job to verify the information of the employee is valid or invalid.
 
-.. health-records:
+.. _health-records:
 
 Health Record Manifest In Judiciary
 -----------------------------------
