@@ -18,6 +18,7 @@ Useful Links
 - `RecordsKeeper Demo <https://demo.recordskeeper.co/>`_
 - `RecordsKeeper Wallet <https://wallet.recordskeeper.co/>`_ 
 - `RecordsKeeper Stats <https://stats.recordskeeper.co/>`_
+- `RecordsKeeper Miners Information <https://miner.recordskeeper.co/>`_
 - `Mainnet Explorer <https://explorer.recordskeeper.co/>`_
 - `Testnet Explorer <http://test-explorer.recordskeeper.co/>`_
 - `Source Code <https://github.com/RecordsKeeper/recordskeeper-core>`_
