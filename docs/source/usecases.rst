@@ -2,6 +2,23 @@
 Use Cases
 =========
 
+Enterprise KYC
+--------------
+
+
+**Enterprise KYC**
+
+.. image:: _static/KYC.png
+		:align: center
+		:width: 693.433px
+
+KYC procedures and Compliance have become increasingly important in the banking industry as regulators are keeping track of banks by noting down with whom they are doing business. It is done to avoid potential money laundering or terrorist financing. Currently, institutions offering financial or professional services are obliged to follow time-consuming and expensive practices for each new customer. These KYC processes can delay business as it can take up to 30 to 50 days to complete satisfactorily. Some estimates showed that global spending on AML compliance alone is close to $10 billion. Banks are also coming under pressure from various investors and analysts to reduce cost, but many expect that the compliance budgets to increase in the coming years rather than to decrease.
+
+The adoption of Blockchain technology could lead to the reduction of AML and KYC costs thanks to its cross-institution client verification capability, as well as its effectiveness in monitoring and analyzing data required for AML and KYC checks.
+
+With Recordskeeper Blockchain, the verification of a client or the legality of a transaction could take place just once, with the final result cryptographically stored in the Recordskeeper Blockchain. Organizations such as banks or administration services providers would be able to get rid of the multistep AML and KYC processes. More specifically, all of the information related to a client would become available to organizations with the appropriate permissions via a distributed database that would be considered a single source of "truth." So, when some bank has verified a new client, then they can put the client's data on Recordskeeper Blockchain which can then also be accessed by other banks and accredited organizations, like loan providers and insurance companies, without the need for the KYC process to be started all over again by another party. These parties would know that the client's information has been independently audited and verified by various independently working miners so that no more KYC checks are necessary.
+
+
 Insurance Records Keeping
 -------------------------
 
@@ -150,14 +167,5 @@ n today’s digital society, everyone is concerned about the privacy and securit
 By using RecordsKeeper blockchain Hospitals can store the patient’s data and it will remain immutable by this data Doctor’s can completely track the patient’s progress. Also, there is another significant advantage, if you go to the vacation in Switzerland then the Doctors of Switzerland can track your data from the New York’s hospital and can provide you better treatment because the data is immutable and present on the distributed public ledger. So, we can say that with the help of RecordsKeeper we can completely revolutionize the health industry.
 
 
-.. ENTERPRISE KYC
-.. --------------
-
-
-.. **Enterprise KYC**
-
-.. 		.. image:: _static/Employee-Verification.png
-.. 		   :align: center
-.. 		   :width: 693.433px
 
 
