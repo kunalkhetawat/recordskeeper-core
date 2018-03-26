@@ -4,16 +4,16 @@ Use Cases
 
 The following use-cases are provided for business and individual needs:
 
-* :ref:`enterprise-kyc`
-* :ref:`insurance-records`
-* :ref:`corporate-compliances`
-* :ref:`academic-certifications`
-* :ref:`supply-chain`
-* :ref:`file-sharing`
-* :ref:`gov-regulations`
-* :ref:`land-ownership`
-* :ref:`employee-verification`
-* :ref:`health-records`
+:ref:`enterprise-kyc`
+:ref:`insurance-records`
+:ref:`corporate-compliances`
+:ref:`academic-certifications`
+:ref:`supply-chain`
+:ref:`file-sharing`
+:ref:`gov-regulations`
+:ref:`land-ownership`
+:ref:`employee-verification`
+:ref:`health-records`
 
 .. _enterprise-kyc:
 Enterprise KYC
