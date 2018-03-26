@@ -2,9 +2,9 @@
 Getting Started
 ===============
 
-This tutorial requires you to setup a RecordsKeeper. If you have not done so already, please download and install RecordsKeeper on a server. If you are using Recordskeeper on Windows, please read the Installation on Windows notes on the previous page to adapt the instructions below.
+This tutorial requires you to setup a RecordsKeeper's Public Blockchain node on your local machine or remote server. If you have not done so already, please download and install RecordsKeeper's client on a local machine or remote server. If you are using RecordsKeeper client on Windows, please read the installation instructions specific to Windows on the previous page.
 
-Download the latest `RecordsKeeper <https://github.com/RecordsKeeper/recordskeeper-core/releases>`_ build and put the downloded files under the root folder. You can also run these commands from the folder where the files are present.
+Download the latest `RecordsKeeper <https://github.com/RecordsKeeper/recordskeeper-core/releases>`_ build and put the downloded files under the bin folder or any other folder and add its path to System PATH environment variable so that you can run these commands from anywhere. Alternatively, you can go to the folder which contains RecordsKeeper binaries and execute these commands from there.
 
 Connecting to RecordsKeeper Blockchain
 --------------------------------------
