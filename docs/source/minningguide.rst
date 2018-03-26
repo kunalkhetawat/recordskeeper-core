@@ -281,7 +281,7 @@ Stopping Blockchain
 
     .. code-block:: bash
 
-        rkd recordskeeper stop
+        rk-cli recordskeeper stop
 
 
 **RecordsKeeper Testnet**
@@ -291,4 +291,4 @@ Stopping Blockchain
 
     .. code-block:: bash
 
-        rkd recordskeeper-test stop
+        rk-cli recordskeeper-test stop
