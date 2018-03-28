@@ -57,7 +57,7 @@ Install dependencies on your operating system.
 .. note::
    You need to install apt-get or any other package manager to install the dependent libraries.
 
-
+.. code-block:: bash
 
     sudo apt-get update
     sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
