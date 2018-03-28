@@ -7,7 +7,17 @@ RecordsKeeper
 
 | 
 
-RecordsKeeper Blockchain-centric solution is built to store, share and manage your information in the safest fashion. Once your data is over the RecordsKeeper Blockchain, it cannot be deleted, tampered or modified even by the data owner. RecordsKeeper offers a rich set of features including extensive configurability, rapid deployment, permissions management, native assets and data streams. There are several use cases for RecordsKeeper ranging from KYC verifications, Supplychain, Manufacturing, Health Record Management, Academic Certifications, Employment Credentials, etc. 
+RecordsKeeper Blockchain-centric solution is built to store, share and manage your information in the safest fashion. Once your data is over the RecordsKeeper Blockchain, it cannot be deleted, tampered or modified even by the data owner. RecordsKeeper offers a rich set of features including extensive configurability, rapid deployment, permissions management, native assets and data streams. There are several use cases for RecordsKeeper ranging from KYC verifications, Supplychain, Manufacturing, Health Record Management, Academic Certifications, Employment Credentials, etc.
+
+The ecosystem for RecordsKeeper includes different layers which provide the building blocks for RecordsKeeper Blockchain. The different layers as shown in the diagram below interact with each other to form the open public minable database over the blockchain.
+
+| 
+
+.. image:: _static/RK_Architecture.png
+   :align: center
+
+| 
+
 
 RecordsKeeper was founded by Toshendra Sharma & Rohendra Singh on November 2016 and includes a team of Developers, Blockchain and Marketing veterans who share a passion for Blockchain technology and believe in collective shared information and data. RecordsKeeper is based in Singapore with offices in India. The team at RecordsKeeper has created an open source immutable public Database over Blockchain technology which can be utilized by millions of users to store and share data, and today a new block of data is being created every 15 seconds. 
 
