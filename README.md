@@ -90,7 +90,8 @@ Install dependencies
     Install XCode and XCode command line tools
     Install git from git-scm
     Install brew (follow instructions on brew.sh)
-    brew install autoconf automake berkeley-db4 libtool boost openssl pkg-config rename
+    brew install autoconf automake berkeley-db4 libtool boost@1.57 openssl pkg-config rename
+    brew link boost@1.57 --force
 
 Prepare for static linking
 --------------------------
