@@ -7,7 +7,10 @@ RecordsKeeper
 
 | 
 
-Recordskeeper is an open source platform for private blockchains, which offers a rich set of features including extensive configurability, rapid deployment, permissions management, native assets and data streams. Although it is designed to enable private blockchains, Recordskeeper provides maximal compatibility with the bitcoin ecosystem, including the peer-to-peer protocol, transaction/block formats and Bitcoin Core APIs/runtime parameters.
+RecordsKeeper Blockchain-centric solution is built to store, share and manage your information in the safest fashion. Once your data is over the RecordsKeeper Blockchain, it cannot be deleted, tampered or modified even by the data owner. There are several use cases for RecordsKeeper ranging from KYC verifications, Supplychain, Manufacturing, Health Record Management, Academic Certifications, Employment Credentials, etc. 
+
+RecordsKeeper was founded by Toshendra Sharma & Rohendra Singh on November 2016 and includes a team of Developers, Blockchain and Marketing veterans who share a passion for Blockchain technology and believe in collective shared information and data. RecordsKeeper is based in Singapore with offices in India. The team at RecordsKeeper has created an open source immutable public Database over Blockchain technology which can be utilized by millions of users to store and share data, and today a new block of data is being created every 15 seconds. 
+
 
 .. note::
    The best way to get familiar with RecordsKeeper is to try the `Demo <https://demo.recordskeeper.co/>`_ . The Demo allows you to create a new wallet and store data in the RecordsKeeper Public Blockchain. It also allows you to retrive the data and verify it.
