@@ -108,8 +108,8 @@ Connecting to RecordsKeeper Blockchain
 
 The RecordsKeeper Testnet Blockchain is avaialble for the users to Develop and Deploy applications over RecordsKeeper Blockchain, XRK Testnet tokens do not hold any value and are only avaialble for testing. You can earn XRK tokens from RecordsKeeper Mainnet mining.
 
-Linux:
-######
+Linux
+#####
 
 Now to connect to the RecordsKeeper Blockchain, run following command from the terminal:
 
@@ -226,8 +226,8 @@ And add Outbound rules by following these steps:
 .. note::
     Windows users now can go to the :ref:`mining-permissions` section.
 
-Mac:
-####
+Mac
+###
 
 Now to connect to the RecordsKeeper Blockchain, run following command from the terminal:
 
@@ -270,7 +270,7 @@ First kill the daemon process and then try connecting to the RecordsKeeper Block
 
 .. note::
 
-    *Mac users now go to the :ref:`mining-permissions` section
+    Mac users can now move to the :ref:`mining-permissions` section
 
 
 .. _mining-permissions:
