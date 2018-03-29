@@ -263,8 +263,10 @@ And, if you want your connection to remain active as a background process then r
 In case of an error message like this: 
 
 .. warning::
+
+    Error: Couldn't initialize permission database for blockchain recordskeeper. Probably rkd for this blockchain is already running. Exiting...
     
-    First kill the daemon process and then try connecting to the RecordsKeeper Blockchain again. If the problem persists then restart your computer and then repeat the whole process of connecting to RecordsKeeper Blockchain again. 
+First kill the daemon process and then try connecting to the RecordsKeeper Blockchain again. If the problem persists then restart your computer and then repeat the whole process of connecting to RecordsKeeper Blockchain again. 
 
 .. note::
 
