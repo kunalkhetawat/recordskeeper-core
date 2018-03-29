@@ -70,6 +70,37 @@ Then open your command line terminal and go to that location, after that run the
 .. note::
     Windows users move directly to the :ref:`connecting-rk` section.
 
+Mac OS:
+#######
+
+First Install these dependencies by executing below commands:
+
+.. code-block:: bash
+
+    Install XCode and XCode command line tools
+    Install git from git-scm
+    Install brew (follow instructions on brew.sh)
+    brew install autoconf automake berkeley-db4 libtool boost@1.57 openssl pkg-config rename
+    brew link boost@1.57 --force
+
+To download the executable directly from the browser `click here <https://github.com/RecordsKeeper/recordskeeper-core/releases/download/v1.0.0/recordskeeper-mac-osx-1.0.0.zip>`_ .
+
+Unzip the zip file and then move to the location of the downloaded files and run following commands from your 
+terminal:
+
+.. code-block:: bash
+
+    cd recordskeeper-mac-osx-1.0.0
+    mv rkd rk-cli rk-util /usr/local/bin 
+
+Moving the RecordsKeeper files to bin directory make them easily accessible from the command line anywhere.
+
+.. note::
+    * if you get error then run the above commands using “sudo” for root privileges 
+    * Use exit command (to return to your regular user)
+    * Mac users move directly to the :ref:`connecting-rk` section
+
+
 .. _connecting-rk:
 
 Connecting to RecordsKeeper Blockchain
@@ -195,6 +226,51 @@ And add Outbound rules by following these steps:
 .. note::
     Windows users now can go to the :ref:`mining-permissions` section.
 
+Mac:
+####
+
+Now to connect to the RecordsKeeper Blockchain, run following command from the terminal:
+
+**RecordsKeeper Testnet**
+
+.. code-block:: bash
+
+    ./rkd recordskeeper-test@35.170.155.89:8379
+
+**RecordsKeeper Mainnet**
+
+.. code-block:: bash
+
+    ./rkd recordskeeper@35.172.1.247:7345
+
+
+This command will initialize your node.
+
+And, if you want your connection to remain active as a background process then run this command:
+
+**RecordsKeeper Testnet**
+
+.. code-block:: bash
+
+    ./rkd recordskeeper-test@35.172.1.247:8379 -daemon
+
+**RecordsKeeper Mainnet**
+
+.. code-block:: bash
+
+    ./rkd recordskeeper@35.172.1.247:7345 -daemon
+
+In case of an error message like this: 
+
+.. warning::
+    
+    First kill the daemon process and then try connecting to the RecordsKeeper Blockchain again. If the problem persists then restart your computer and then repeat the whole process of connecting to RecordsKeeper Blockchain again. 
+
+.. note::
+
+    *Mac users now go to the :ref:`mining-permissions` section
+
+
 .. _mining-permissions:
 
 Mining Permissions
@@ -217,6 +293,17 @@ You will see the following message on your Windows command line terminal after y
 .. image:: _static/WindowsRKD.png
    :align: center
 
+RecordsKeeper on Mac
+####################
+
+You will see the folowing message on your Mac command line terminal after you execute the command to connect to the Recordskeeper blockchain.
+
+.. image:: _static/MacRKD.jpg
+   :align: center
+   :width: 693.433px
+
+
+
 RecordsKeeper Permissions
 #########################
 
@@ -231,6 +318,7 @@ For Mainnet when your node gets connected, you will receive the permissions to c
 .. code-block:: bash
 
     rk-cli recordskeeper getaddresses
+    ./rk-cli recordskeeper getaddresses                        #(for Mac Users)
 
 Copy this address and send it to us `here <https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform>`_ to recieve Mining Permissions for RecordsKeeper Mainnet.
 
@@ -241,6 +329,8 @@ To retrieve private key for your node address run this command:
 .. code-block:: bash
 
     rk-cli recordskeeper dumpprivkey {default_XRK_address}        #(input node_address without braces)
+    ./rk-cli recordskeeper dumpprivkey {default_XRK_address}        #(for Mac Users)
+
 
 .. note::
     Please store this private key safely, losing this will result in loss of XRK coins.
@@ -252,6 +342,11 @@ After completing the above process, you can check for your node’s information 
 
     rk-cli recordskeeper getinfo                 #(for synced block)
     rk-cli recordskeeper getblockchaininfo       #(for best block)
+
+    
+    ./rk-cli recordskeeper getinfo                 #(for Mac Users)
+    ./rk-cli recordskeeper getblockchaininfo       #(for Mac Users)
+
 
 Your node will sync up to the best block, and then only your node can start mining and your balance will get updated with the mined XRK coins.
 
@@ -270,6 +365,8 @@ Please check ip-address and port properly to connect to the RecordsKeeper Blockc
     .. code-block:: bash
 
         rk-cli recordskeeper importprivkey {private_key}      #(include private key without braces)
+        ./rk-cli recordskeeper importprivkey {private_key}      #(for Mac Users)
+
 
 Stopping Blockchain
 -------------------
@@ -282,6 +379,7 @@ Stopping Blockchain
     .. code-block:: bash
 
         rk-cli recordskeeper stop
+        ./rk-cli recordskeeper stop                          #(for Mac Users)
 
 
 **RecordsKeeper Testnet**
@@ -292,3 +390,4 @@ Stopping Blockchain
     .. code-block:: bash
 
         rk-cli recordskeeper-test stop
+        ./rk-cli recordskeeper-test stop                    #(for Mac Users)
