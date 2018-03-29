@@ -284,8 +284,8 @@ RecordsKeeper on Linux
 You will see the folowing message on your Linux command line terminal after you execute the command to connect to the Recordskeeper blockchain.
 
 .. image:: _static/LinuxRKD.jpg
-   :align: center
-   :width: 693.433px
+    :align: center
+    :width: 693.433px
 
 RecordsKeeper on Windows
 ########################
@@ -293,16 +293,16 @@ RecordsKeeper on Windows
 You will see the following message on your Windows command line terminal after you execute the command to connect to the Recordskeeper blockchain.
 
 .. image:: _static/WindowsRKD.png
-   :align: center
+    :align: center
 
 RecordsKeeper on Mac
 ####################
 
 You will see the folowing message on your Mac command line terminal after you execute the command to connect to the Recordskeeper blockchain.
 
-.. image:: _static/MacRKD.jpg
-   :align: center
-   :width: 693.433px
+.. image:: _static/MacRKD.png
+    :align: center
+    :width: 693.433px
 
 
 
