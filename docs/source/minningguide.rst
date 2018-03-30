@@ -298,7 +298,7 @@ You will see the following message on your Windows command line terminal after y
 RecordsKeeper on Mac
 ####################
 
-You will see the folowing message on your Mac command line terminal after you execute the command to connect to the Recordskeeper blockchain.
+You will see the folowing message on your Mac command line terminal after you execute the command to connect to the Recordskeeper Blockchain.
 
 .. image:: _static/MacRKD.png
     :align: center
