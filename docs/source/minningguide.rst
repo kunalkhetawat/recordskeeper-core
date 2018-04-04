@@ -123,7 +123,7 @@ Now to connect to the RecordsKeeper Blockchain, run following command from the t
 
 .. code-block:: bash
 
-    rkd recordskeeper@35.172.1.247:7345
+    rkd recordskeeper@35.172.1.247:7895
 
 
 This command will initialize your node.
@@ -140,7 +140,7 @@ And, if you want your connection to remain active as a background process then r
 
 .. code-block:: bash
 
-    rkd recordskeeper@35.172.1.247:7345 -daemon
+    rkd recordskeeper@35.172.1.247:7895 -daemon
 
 .. note::
     Linux users now go to the :ref:`mining-permissions` section
@@ -160,7 +160,7 @@ Now to connect to the RecordsKeeper Blockchain, first go into the directory wher
 
 .. code-block:: bash
 
-    rkd recordskeeper@35.172.1.247:7345  
+    rkd recordskeeper@35.172.1.247:7895  
 
 
 This command will initialize your node.
@@ -177,7 +177,7 @@ And, if you want your connection to remain active as a background process then r
 
 .. code-block:: bash
 
-    rkd recordskeeper@35.172.1.247:7345 -daemon
+    rkd recordskeeper@35.172.1.247:7895 -daemon
 
 If the Operating system does not pop up the allow firewall connections for rkd like shown below:
 
@@ -241,7 +241,7 @@ Now to connect to the RecordsKeeper Blockchain, run following command from the t
 
 .. code-block:: bash
 
-    ./rkd recordskeeper@35.172.1.247:7345
+    ./rkd recordskeeper@35.172.1.247:7895
 
 
 This command will initialize your node.
@@ -258,7 +258,7 @@ And, if you want your connection to remain active as a background process then r
 
 .. code-block:: bash
 
-    ./rkd recordskeeper@35.172.1.247:7345 -daemon
+    ./rkd recordskeeper@35.172.1.247:7895 -daemon
 
 In case of an error message like this: 
 
