@@ -105,7 +105,8 @@ Install dependencies on your operating system.
     Install XCode and XCode command line tools
     Install git from git-scm
     Install brew (follow instructions on brew.sh)
-    brew install autoconf automake berkeley-db4 libtool boost openssl pkg-config rename
+    brew install autoconf automake berkeley-db4 libtool boost@1.57 openssl pkg-config rename
+    brew link boost@1.57 --force
 
 Prepare for static linking
 ##########################
@@ -145,6 +146,7 @@ This will build rkd, rk-cli and rk-util in the src directory.
 
     export LDFLAGS=-L/usr/local/opt/openssl/lib
     export CPPFLAGS=-I/usr/local/opt/openssl/include
+    ./autogen.sh
     ./configure --with-gui=no --with-libs=no --with-miniupnpc=no
     make
 

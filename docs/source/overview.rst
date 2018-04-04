@@ -1,5 +1,6 @@
-RecordsKeeper
-=============
+======================
+RecordsKeeper Overview
+======================
 | 
 
 .. image:: _static/Records-kepeer-Logo.png
@@ -67,9 +68,3 @@ Contents
    contributing
    faq
    contactus
-
-
-
-
-
-
