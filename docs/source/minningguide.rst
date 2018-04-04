@@ -201,7 +201,7 @@ And add Outbound rules by following these steps:
 .. image:: _static/Step1Outbound.png
    :align: center
 
-**Step 2:** Specify the port address of the RecordsKeeper Blockchain to which you are allowing access, for Testnet type 8379 and to open ports for Mainnet type 7345 in the textbox and then click on Next:
+**Step 2:** Specify the port address of the RecordsKeeper Blockchain to which you are allowing access, for Testnet type 8379 and to open ports for Mainnet type 7895 in the textbox and then click on Next:
 
 .. image:: _static/Step2Outbound.png
    :align: center
