@@ -1,3 +1,4 @@
+
 =========================================
 Mining Guide for Recordskeeper Blockchain
 =========================================
@@ -295,12 +296,17 @@ You will see the following message on your Windows command line terminal after y
 .. image:: _static/WindowsRKD.png
    :align: center
 
+.. note::
+
+    Windows users have to open a new command line terminal window for running the remaining commands
+
+
 RecordsKeeper on Mac
 ####################
 
 You will see the folowing message on your Mac command line terminal after you execute the command to connect to the Recordskeeper blockchain.
 
-.. image:: _static/MacRKD.jpg
+.. image:: _static/MacRKD.png
    :align: center
    :width: 693.433px
 
