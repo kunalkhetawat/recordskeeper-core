@@ -5,7 +5,7 @@ Contact Us
 Tell Us About Your Current Challenges
 -------------------------------------
 
-We thrive when coming up with innovative ideas but also understand that a smart concept should be supported with measurable results individuals.
+We thrive when coming up with innovative ideas but also understand that a smart concept should be supported with measurable results and individuals.
 
 Join us at the following:
 
