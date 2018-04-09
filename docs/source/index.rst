@@ -25,6 +25,15 @@ RecordsKeeper was founded by Toshendra Sharma & Rohendra Singh on November 2016 
 .. note::
    The best way to get familiar with RecordsKeeper is to try the `Demo <https://demo.recordskeeper.co/>`_ . The Demo allows you to create a new wallet and store data in the RecordsKeeper Public Blockchain. It also allows you to retrive the data and verify it.
 
+Users/Organizations can create there own private node which can act as building blocks for their applications. The standard JSON RPC APIs provided with RecordsKeeper helps in seamless integration of applications with the RecordsKeeper Blockchain which get synchronised with Public RecordsKeeper Node and data can be viewed and verified by the parties involved or shared globally.
+
+| 
+
+.. image:: _static/HowRKWorks.png
+   :align: center
+
+| 
+
 Useful Links
 ------------
 - `RecordsKeeper <https://www.recordskeeper.co/>`_
