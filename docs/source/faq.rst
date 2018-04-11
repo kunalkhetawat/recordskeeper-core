@@ -145,7 +145,7 @@ The main purpose of XRK is upload records over the RecordsKeeper Blockchain. Our
 What is the value of XRK?
 #########################
 
-The current value of XRK is 1 BTC (Bitcoin) = 10,000 XRK. This value is subject to change as per the supply and demand.
+The current value of XRK is 1 BTC (Bitcoin) = 20,000 XRK. This value is subject to change as per the supply and demand.
 
 How XRK are generated?
 ######################
