@@ -2,7 +2,7 @@
 Mining Guide for Recordskeeper Blockchain on Linux
 ==================================================
 
-The following document helps the users to intiate mining for RecordsKeeper Blockchain over Linux Operating system. All the commands and process displayed in this document is tested and created over Ubuntu Operating System. You have to perform the following steps to to start mining for RecordsKeeper Blockchain:
+The following document helps the users to intiate mining for RecordsKeeper Blockchain over Linux Operating system. All the commands and process displayed in this document is tested and created over Ubuntu Operating System. The detailed overview to start mining for RecordsKeeper Blockchain is as follows:
 
 * :ref:`system-requirements`
 * :ref:`installing-rk`
@@ -16,8 +16,6 @@ System requirements
 -------------------
 
 * Linux: 64-bit, supports Ubuntu 12.04+, CentOS 6.2+, Debian 7+, Fedora 15+, RHEL 6.2+.
-* Windows: 64-bit, supports Windows 7, 8, 10, Server 2008 or later.
-* Mac: 64-bit, supports OS X 10.12 (we hope to support earlier versions soon).
 * 512 MB of RAM
 * 1 GB of disk space
 
@@ -130,7 +128,6 @@ For Mainnet when your node gets connected, you will receive the permissions to c
 .. code-block:: bash
 
     rk-cli recordskeeper getaddresses
-    ./rk-cli recordskeeper getaddresses                        #(for Mac Users)
 
 **Copy this address and send it to us `here <https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform>`_ to recieve Mining Permissions for RecordsKeeper Mainnet.**
 
@@ -141,7 +138,6 @@ To retrieve private key for your node address run this command:
 .. code-block:: bash
 
     rk-cli recordskeeper dumpprivkey {default_XRK_address}        #(input node_address without braces)
-    ./rk-cli recordskeeper dumpprivkey {default_XRK_address}        #(for Mac Users)
 
 
 .. note::
@@ -154,10 +150,6 @@ After completing the above process, you can check for your node’s information 
 
     rk-cli recordskeeper getinfo                 #(for synced block)
     rk-cli recordskeeper getblockchaininfo       #(for best block)
-
-    
-    ./rk-cli recordskeeper getinfo                 #(for Mac Users)
-    ./rk-cli recordskeeper getblockchaininfo       #(for Mac Users)
 
 
 Your node will sync up to the best block, and then only your node can start mining and your balance will get updated with the mined XRK coins.
@@ -177,7 +169,6 @@ Please check ip-address and port properly to connect to the RecordsKeeper Blockc
     .. code-block:: bash
 
         rk-cli recordskeeper importprivkey {private_key}      #(include private key without braces)
-        ./rk-cli recordskeeper importprivkey {private_key}      #(for Mac Users)
 
 .. _stop-rk:
 
@@ -192,7 +183,6 @@ Stopping RecordsKeeper Blockchain
     .. code-block:: bash
 
         rk-cli recordskeeper stop
-        ./rk-cli recordskeeper stop                          #(for Mac Users)
 
 
 **RecordsKeeper Testnet**
@@ -203,4 +193,3 @@ Stopping RecordsKeeper Blockchain
     .. code-block:: bash
 
         rk-cli recordskeeper-test stop
-        ./rk-cli recordskeeper-test stop                    #(for Mac Users)
