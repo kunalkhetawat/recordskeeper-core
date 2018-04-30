@@ -192,7 +192,6 @@ As the IP configuration is already stored with you when you intiated the connect
 
 .. image:: _static/LinuxRKAfterMining.png
    :align: center
-   :width: 693.433px
 
 You can run getinfo command or getaddressbalances command to see the balance in your node or directly the node address.
 
