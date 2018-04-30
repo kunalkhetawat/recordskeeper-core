@@ -8,6 +8,7 @@ The following document helps the users to intiate mining for RecordsKeeper Block
 * :ref:`windows-installingrk`
 * :ref:`windows-connectingrk`
 * :ref:`windows-miningpermissions`
+* :ref:`windows-startrkaftermining`
 * :ref:`windows-stoprk`
 
 .. _windows-systemrequirements:
@@ -200,6 +201,51 @@ Please check ip-address and port properly to connect to the RecordsKeeper Blockc
     .. code-block:: bash
 
         rk-cli recordskeeper importprivkey {private_key}      #(include private key without braces)
+
+.. _windows-startrkaftermining:
+
+Connecting to RecordsKeeper Blockchain after Permissions
+--------------------------------------------------------
+
+Once the permissions for RecordsKeeper Mainnet has been granted. You can directly connect to the RecordsKeeper chain and see your mining over the Public RecordsKeeper Blockchain. You can run following commands to connect to the RecordsKeeper Blockchain and view the mining address.
+
+As the IP configuration is already stored with you when you intiated the connection before, you can directly run the following command:
+
+.. code-block:: bash
+
+    rkd recordskeeper -daemon
+
+.. image:: _static/WindowsRKAfterMining.png
+   :align: center
+   :width: 693.433px
+
+You can run getinfo command or getaddressbalances command to see the balance in your node or directly the node address.
+
+.. code-block:: bash
+
+    rk-cli recordskeeper getinfo
+
+.. image:: _static/WindowsGetInfoMining.png
+   :align: center
+   :width: 693.433px
+
+.. note::
+
+    You can view your balances in the balance output of the getinfo command.
+
+OR
+
+.. code-block:: bash
+
+    rk-cli recordskeeper getaddressbalances <Your Node Address Given for Mining>
+
+.. image:: _static/WindowsAddressBalancesAfterMining.png
+   :align: center
+   :width: 693.433px
+
+.. note::
+
+    Please do not use the address specified above, this address is only avaialble for the demo purpose.
 
 .. _windows-stoprk:
 

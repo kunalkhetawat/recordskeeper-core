@@ -190,7 +190,7 @@ As the IP configuration is already stored with you when you intiated the connect
 
     rkd recordskeeper -daemon
 
-.. image:: _static/LinuxRKAfterMining.jpg
+.. image:: _static/LinuxRKAfterMining.png
    :align: center
    :width: 693.433px
 
@@ -200,7 +200,7 @@ You can run getinfo command or getaddressbalances command to see the balance in 
 
     rk-cli recordskeeper getinfo
 
-.. image:: _static/LinuxGetInfoMining.jpg
+.. image:: _static/LinuxGetInfoMining.png
    :align: center
    :width: 693.433px
 
@@ -214,7 +214,7 @@ OR
 
     rk-cli recordskeeper getaddressbalances <Your Node Address Given for Mining>
 
-.. image:: _static/LinuxAddressBalancesAfterMining.jpg
+.. image:: _static/LinuxAddressBalancesAfterMining.png
    :align: center
    :width: 693.433px
 
