@@ -4,13 +4,13 @@ Mining Guide for Recordskeeper Blockchain on Linux
 
 The following document helps the users to intiate mining for RecordsKeeper Blockchain over Linux Operating system. All the commands and process displayed in this document is tested and created over Ubuntu Operating System. The detailed overview to start mining for RecordsKeeper Blockchain is as follows:
 
-* :ref:`system-requirements`
-* :ref:`installing-rk`
-* :ref:`connecting-rk`
-* :ref:`mining-permissions`
-* :ref:`stop-rk`
+* :ref:`linux-systemrequirements`
+* :ref:`linux-installingrk`
+* :ref:`linux-connectingrk`
+* :ref:`linux-miningpermissions`
+* :ref:`linux-stoprk`
 
-.. _system-requirements:
+.. _linux-systemrequirements:
 
 System requirements
 -------------------
@@ -19,7 +19,7 @@ System requirements
 * 512 MB of RAM
 * 1 GB of disk space
 
-.. _installing-rk:
+.. _linux-installingrk:
 
 Installing Recordskeeper on Linux
 ---------------------------------
@@ -59,7 +59,7 @@ Moving the RecordsKeeper files to bin directory make them easily accessible from
     * Use exit command (to return to your regular user)
     * Linux users move directly to the :ref:`connecting-rk` section
 
-.. _connecting-rk:
+.. _linux-connectingrk:
 
 Connecting to RecordsKeeper Blockchain on Linux
 -----------------------------------------------
@@ -100,7 +100,7 @@ And, if you want your connection to remain active as a background process then r
 .. note::
     Linux users now go to the :ref:`mining-permissions` section
 
-.. _mining-permissions:
+.. _linux-miningpermissions:
 
 Mining Permissions
 ------------------
@@ -129,7 +129,13 @@ For Mainnet when your node gets connected, you will receive the permissions to c
 
     rk-cli recordskeeper getaddresses
 
-**Copy this address and send it to us `here <https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform>`_ to recieve Mining Permissions for RecordsKeeper Mainnet.**
+**Submit the following to recieve Mining Permissions for RecordsKeeper Mainnet.**
+
+Copy this address and send it to us `here <https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform>`_ .
+
+You can also use directly the link and paste it in your web browser:
+
+**https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform**
 
 After RecordsKeeper team grant mining permissions to your node address, only after that you would be able to mine XRK coins into your default address.
 
@@ -170,7 +176,7 @@ Please check ip-address and port properly to connect to the RecordsKeeper Blockc
 
         rk-cli recordskeeper importprivkey {private_key}      #(include private key without braces)
 
-.. _stop-rk:
+.. _linux-stoprk:
 
 Stopping RecordsKeeper Blockchain
 ---------------------------------

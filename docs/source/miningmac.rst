@@ -4,13 +4,13 @@ Mining Guide for Recordskeeper Blockchain on Mac
 
 The following document helps the users to intiate mining for RecordsKeeper Blockchain over Mac Operating system. All the commands and process displayed in this document is tested and created over Mac OS X 10.12 and above. The detailed overview to start mining for RecordsKeeper Blockchain is as follows:
 
-* :ref:`system-requirements`
-* :ref:`installing-rk`
-* :ref:`connecting-rk`
-* :ref:`mining-permissions`
-* :ref:`stop-rk`
+* :ref:`mac-systemrequirements`
+* :ref:`mac-installingrk`
+* :ref:`mac-connectingrk`
+* :ref:`mac-miningpermissions`
+* :ref:`mac-stoprk`
 
-.. _system-requirements:
+.. _mac-systemrequirements:
 
 System requirements
 -------------------
@@ -19,7 +19,7 @@ System requirements
 * 512 MB of RAM
 * 1 GB of disk space
 
-.. _installing-rk:
+.. _mac-installingrk:
 
 Installing Recordskeeper on Mac OS:
 -----------------------------------
@@ -51,7 +51,7 @@ Moving the RecordsKeeper files to bin directory make them easily accessible from
     * Use exit command (to return to your regular user)
     * Mac users move directly to the :ref:`connecting-rk` section
 
-.. _connecting-rk:
+.. _mac-connectingrk:
 
 Connecting to RecordsKeeper Blockchain on Mac
 ---------------------------------------------
@@ -101,7 +101,7 @@ First kill the daemon process and then try connecting to the RecordsKeeper Block
 
     *Mac users now go to the :ref:`mining-permissions` section
 
-.. _mining-permissions:
+.. _mac-miningpermissions:
 
 Mining Permissions
 ------------------
@@ -130,7 +130,13 @@ For Mainnet when your node gets connected, you will receive the permissions to c
 
     ./rk-cli recordskeeper getaddresses
 
-**Copy this address and send it to us `here <https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform>`_ to recieve Mining Permissions for RecordsKeeper Mainnet.**
+**Submit the following to recieve Mining Permissions for RecordsKeeper Mainnet.**
+
+Copy this address and send it to us `here <https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform>`_ .
+
+You can also use directly the link and paste it in your web browser:
+
+**https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform**
 
 After RecordsKeeper team grant mining permissions to your node address, only after that you would be able to mine XRK coins into your default address.
 
@@ -171,7 +177,7 @@ Please check ip-address and port properly to connect to the RecordsKeeper Blockc
 
         ./rk-cli recordskeeper importprivkey {private_key}
 
-.. _stop-rk:
+.. _mac-stoprk:
 
 Stopping Blockchain
 -------------------
