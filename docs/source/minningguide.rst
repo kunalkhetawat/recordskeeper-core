@@ -1,4 +1,3 @@
-
 =========================================
 Mining Guide for Recordskeeper Blockchain
 =========================================
@@ -400,3 +399,11 @@ Stopping Blockchain
         rk-cli recordskeeper-test stop
         ./rk-cli recordskeeper-test stop                    #(for Mac Users)
 
+
+.. toctree::
+    :maxdepth: 2
+
+    mininglinux
+    miningwindows
+        
+        miningmac
