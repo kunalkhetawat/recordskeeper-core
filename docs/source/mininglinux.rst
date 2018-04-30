@@ -132,8 +132,7 @@ For Mainnet when your node gets connected, you will receive the permissions to c
 
 **Submit the following to recieve Mining Permissions for RecordsKeeper Mainnet.**
 
-.. rubric:: Mining Permission Form
-
+.. note::
     Copy the above generated address and send it to us `here <https://docs.google.com/forms/d/e/1FAIpQLSd1Dd2GAggCyom23HgiBhnQIjlLjMgRwf_UOQrHp9BUTRPEYA/viewform>`_ .
 
 After RecordsKeeper team grant mining permissions to your node address, only after that you would be able to mine XRK coins into your default address.
