@@ -48,23 +48,3 @@ The next section will explain several features of RecordsKeeper. You can impleme
 The last section will cover important aspects and Use Cases of RecordsKeeper in depth.
 
 If you still have questions, you can try searching or asking on the RecordsKeeper FAQ, or come to our `Telegram <https://t.me/joinchat/B4T_PxInGAjiXLz1N66t3Q>`_ channel. Ideas for improving RecordsKeeper or this documentation are always welcome!
-
-Contents
---------
-
-:ref:`genindex`,
-:ref:`modindex`,
-:ref:`search`
-
-.. toctree::
-   :maxdepth: 2
-
-   overview
-   install
-   gettingstarted
-   minningguide
-   postman
-   usecases
-   contributing
-   faq
-   contactus
