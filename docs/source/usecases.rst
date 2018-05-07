@@ -116,7 +116,7 @@ Each unit has a set of compliance which needs to be followed. Recordskeeper, can
 
 .. _file-sharing:
 
-Trutless File Sharing
+Trustless File Sharing
 ----------------------
 
 **Trustless File Storing and Sharing over RecordsKeeper Blockchain**
